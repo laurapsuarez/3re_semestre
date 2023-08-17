@@ -1,0 +1,48 @@
+import javax.swing.JOptionPane;
+
+public class NewMain {
+
+    public static void main(String[] args) {
+        JOptionPane.showMessageDialog(null,"ingrese numero a");
+        int a = obtenerNumeroEntero();
+        JOptionPane.showMessageDialog(null,"ingrese numero b");
+        int b = obtenerNumeroEntero();
+        JOptionPane.showMessageDialog(null,"ingrese la operacon que desea relizar  \n1.suma \n2.resta \n3.multiplicar \n4.dividir \n5.salir ");
+        int op = obtenerNumeroEntero();
+        switch (op) {
+            case 1:
+                JOptionPane.showMessageDialog(null,"1.suma \nel resultado es: "+(a+b));
+                break;
+            case 2:
+                JOptionPane.showMessageDialog(null,"2.resta \nel resultado es: "+(a-b));
+                break;
+            case 3:
+                JOptionPane.showMessageDialog(null,"1.suma \nel resultado es: "+(a*b));
+                break;
+            case 4:
+                if(b == 0){
+                    JOptionPane.showMessageDialog(null,"ingrese numero b diferente de 0");
+                    b = obtenerNumeroEntero();  
+                }
+                JOptionPane.showMessageDialog(null,"4.dividir \nel resultado es: "+(a/b));
+                break;
+            case 5:
+                JOptionPane.showMessageDialog(null,"5.salir \nGracias por usar!!");
+                break;
+            default:
+                throw new AssertionError();
+        }
+       
+    }
+    
+    
+    public static int obtenerNumeroEntero() {
+        while (true) {
+            try {
+                return Integer.parseInt(JOptionPane.showInputDialog(null));
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Error: Ingrese un valor numérico válido.");
+            }
+        }
+    }
+}
