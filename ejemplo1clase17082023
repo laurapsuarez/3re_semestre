@@ -2,13 +2,19 @@ import javax.swing.JOptionPane;
 
 public class NewMain {
 
+
     public static void main(String[] args) {
+        
+        while (true) { 
+            
         JOptionPane.showMessageDialog(null,"ingrese numero a");
         int a = obtenerNumeroEntero();
         JOptionPane.showMessageDialog(null,"ingrese numero b");
         int b = obtenerNumeroEntero();
-        JOptionPane.showMessageDialog(null,"ingrese la operacon que desea relizar  \n1.suma \n2.resta \n3.multiplicar \n4.dividir \n5.salir ");
+        JOptionPane.showMessageDialog(null,"ingrese la operacon que desea relizar  \n1.suma \n2.resta \n3.multiplicar \n4.dividir  ");
         int op = obtenerNumeroEntero();
+        
+        
         switch (op) {
             case 1:
                 JOptionPane.showMessageDialog(null,"1.suma \nel resultado es: "+(a+b));
@@ -17,7 +23,7 @@ public class NewMain {
                 JOptionPane.showMessageDialog(null,"2.resta \nel resultado es: "+(a-b));
                 break;
             case 3:
-                JOptionPane.showMessageDialog(null,"1.suma \nel resultado es: "+(a*b));
+                JOptionPane.showMessageDialog(null,"3.multiplicar \nel resultado es: "+(a*b));
                 break;
             case 4:
                 if(b == 0){
@@ -26,13 +32,24 @@ public class NewMain {
                 }
                 JOptionPane.showMessageDialog(null,"4.dividir \nel resultado es: "+(a/b));
                 break;
-            case 5:
-                JOptionPane.showMessageDialog(null,"5.salir \nGracias por usar!!");
-                break;
             default:
-                throw new AssertionError();
+                while (op  < 1  && op > 4) {
+                    JOptionPane.showMessageDialog(null,"ingrese la operacon que desea relizar  \n1.suma \n2.resta \n3.multiplicar \n4.dividir \n5.salir ");
+                    op = obtenerNumeroEntero();
+                }
         }
-       
+        
+        
+        JOptionPane.showMessageDialog(null,"0.salir \n1.continuar");
+        int con = obtenerNumeroEntero();
+        
+        if(con == 0){
+            break;
+        }
+
+        
+        }
+ 
     }
     
     
