@@ -1,0 +1,56 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ejemplo2408;
+
+import javax.swing.JOptionPane;
+
+class calculadoras {
+
+    public double a;
+    public double b;
+    public double resultado;
+    
+    
+    public void setA(double a ){     // si
+        this.a = a;
+    }
+    
+    public void setB(double b){      // si 
+        this.b = b;
+    }
+    
+
+    public double getResultado() {
+        return resultado;
+    }
+     
+        
+    
+    public double sumar(double a, double b) {
+        resultado = a + b;
+        return resultado;
+    }
+
+    public double restar(double a, double b) {
+        resultado = a - b;
+        return resultado;
+    }
+
+    public double multiplicar(double a, double b) {
+        resultado = a * b;
+        return resultado;
+    }
+
+    public double dividir(double a, double b) {
+        if (b == 0) {
+            JOptionPane.showMessageDialog(null, "ingrese numero b diferente de 0");
+            b = Double.parseDouble(JOptionPane.showInputDialog(null));
+        }
+        resultado = a / b;
+        return resultado;
+    }
+ 
+}
