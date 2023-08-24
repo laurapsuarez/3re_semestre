@@ -1,0 +1,47 @@
+package ejemplo2408;
+
+import javax.swing.JOptionPane;
+
+public class calculadoraApp {
+
+    public static int op = 0;
+
+    public static void main(String[] args) {
+        
+        calculadoras myCalculadora = new calculadoras();
+        
+        while (true) {
+            
+            double a = Double.parseDouble(JOptionPane.showInputDialog("ingrese numero a"));
+            
+            double b = Double.parseDouble(JOptionPane.showInputDialog("ingrese numero b"));
+
+            op = Integer.parseInt(JOptionPane.showInputDialog("ingrese la operacon que desea relizar  \\n1.suma \\n2.resta \\n3.multiplicar \\n4.dividir  "));
+            if (op >= 1 && op <= 4){
+                break;
+            }else{
+                JOptionPane.showMessageDialog(null, "ingrese numero valido");
+            }
+            
+            switch (op) {
+                case 1:
+                    myCalculadora.sumar(a,b);
+                    JOptionPane.showMessageDialog(null,myCalculadora.getResultado());
+                    break;
+                case 2:
+                    myCalculadora.;
+                    break;
+                case 3:
+                    multiplicar();
+                    break;
+                case 4:
+                    dividir();
+                    break;
+            }
+            
+            JOptionPane.showMessageDialog(null, "el resultado es : "+getResultado());
+            
+        }
+    }
+
+}
